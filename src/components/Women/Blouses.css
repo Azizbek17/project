@@ -1,0 +1,52 @@
+.card-container {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.clothes {
+    background: #fff;
+    padding: 60px 0;
+}
+
+.card {
+    max-width: 250px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    background: #fafaf9;
+    box-shadow: 0 0 10px rgb(0,0,0,0.8);
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-info .money {
+    font-size: 18px;
+    color: rgb(219, 58, 58);
+    font-weight: bold;
+}
+
+.card-info i {
+    margin-right: 8px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 30px;
+}
+
+@media screen and (max-width: 765px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-row-gap: 10px;
+        justify-items: center;
+    }
+}

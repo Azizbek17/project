@@ -1,0 +1,27 @@
+footer {
+    background-color: rgb(255, 43, 43);
+}
+
+.col-sm {
+    color: white;
+    margin-top: 30px;
+}
+
+.span {
+    font-size: 10px;
+}
+
+.contact_icons {
+ width: 30px;
+ display: flex;
+
+}
+
+.contact_icon {
+    padding: 10px;
+}
+
+h3 {
+    font-size: 20px;
+}
+

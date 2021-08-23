@@ -1,0 +1,41 @@
+
+.logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo_veshalka {
+    width: 110px;
+}
+
+.logo_right  {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo_left {
+    align-items: center;
+    display: flex;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo_text {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.mini_text {
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+}

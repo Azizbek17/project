@@ -18,11 +18,12 @@ import { HashRouter, Route, Switch, } from 'react-router-dom';
 function App() {
 
   const [cartOpened, setCartOpened] = React.useState(false);
-  const [cartItems, setCartItems,] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
 
 
   return (
 
+    
     <>
       {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} />}
       <Header onClickCart={() => setCartOpened(true)} />

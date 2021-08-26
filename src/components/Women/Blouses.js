@@ -5,41 +5,41 @@ import './Blouses3.css';
 
 const items = [
 
-    // {
-    //     "title": "aaaaaa",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // },
-    // {
-    //     "title": "bbbbb",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // },
-    // {
-    //     "title": "ccccc",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // },
-    // {
-    //     "title": "dddddd",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // },
-    // {
-    //     "title": "eeeeee",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // },
-    // {
-    //     "title": "fffffff",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // },
-    // {
-    //     "title": "gggggg",
-    //     "price": 12312,
-    //     "imageUrl": "./img/women/blouses/2.jpg"
-    // }
+    {
+        "title": "aaaaaa",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
+    {
+        "title": "bbbbb",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
+    {
+        "title": "ccccc",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
+    {
+        "title": "dddddd",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
+    {
+        "title": "eeeeee",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
+    {
+        "title": "fffffff",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
+    {
+        "title": "gggggg",
+        "price": 12312,
+        "imageUrl": "./img/women/blouses/2.jpg"
+    },
 
 ];
 
@@ -48,6 +48,7 @@ const items = [
 function Blouses() {
 
     const [items, setItems] = React.useState([]);
+    const [cartItems, setCartItems] = React.useState([]);
 
     React.useEffect(() => {
         fetch('https://61253db83c91fb0017e72a04.mockapi.io/items')
@@ -59,18 +60,21 @@ function Blouses() {
             });
     }, []);
 
+
     const onAddToCart = (obj) => {
-        console.log(obj);
-    }
+        setCartItems([... cartItems, obj]);
+    };
+
+    console.log(cartItems);
 
     return (
         <div className="container">
             <div className="cards">
-                {items.map((item) => (
+                {items.map((obj) => (
                     <Blouses3
-                        title={item.title}
-                        price={item.price}
-                        imageUrl={item.imageUrl}
+                        title={obj.title}
+                        price={obj.price}
+                        imageUrl={obj.imageUrl}
                         onPlus={(obj) => onAddToCart(obj)}
                     />
                 ))}

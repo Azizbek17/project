@@ -1,0 +1,97 @@
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1000px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 385px;
+    height: 100%;
+    right: 0;
+    background: #ffffff;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.items {
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.cartItem {
+    display: flex;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pic {
+margin: 10px;
+}
+
+.removeBtn {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+}
+.removeBtn:hover {
+    opacity: 1;
+}
+
+
+li {
+display: flex;
+align-items: flex-end;
+}
+
+.dash_button {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dashed #dfdfdf;
+    position: relative;
+    top: -4px;
+    margin: 0 7px;
+}
+
+.order_button {
+font-weight: 600;
+border: none;
+color: white;
+width: 100%;
+width: 325px;
+height: 45px;
+left: 895px;
+top: 974px;
+background: #9DD558;
+border-radius: 18px;
+cursor: pointer;
+transition: 0.1s ease-in-out;
+}
+
+
+.order_button:hover {
+    background: rgb(26, 160, 21);
+}
+
+
+.order_button:active {
+    background: rgb(1, 104, 1);
+}
+
+.arrowBtn {
+    margin-left: 15px;
+}
+
+.cart_remove {
+    display: flex;
+    justify-content: space-around;
+}

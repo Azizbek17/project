@@ -1,74 +1,82 @@
-// import React from 'react';
-// import Blouses2 from './Blouses2';
-// import '../Women/Blouses.css';
+import React from 'react';
+import Blouses3 from './Blouses3';
+import './Blouses3.css';
 
 
-// const card = [
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
+const items = [
 
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
+    // {
+    //     "title": "aaaaaa",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // },
+    // {
+    //     "title": "bbbbb",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // },
+    // {
+    //     "title": "ccccc",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // },
+    // {
+    //     "title": "dddddd",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // },
+    // {
+    //     "title": "eeeeee",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // },
+    // {
+    //     "title": "fffffff",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // },
+    // {
+    //     "title": "gggggg",
+    //     "price": 12312,
+    //     "imageUrl": "./img/women/blouses/2.jpg"
+    // }
 
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-//     {
-//         title: 'wadsfdd',
-//         price: 12312,
-//         imageUrl: './img/women/blouses/2.jpg'
-//     },
-
-// ];
+];
 
 
-// function Blouses(props) {
-//     return (
-//         <>
-//                 {card.map((obj) => (
-//                     <Blouses2 title={obj.title} price={obj.price} imageUrl={obj.imageUrl} />
-//                 ))}
-//         </>
-//     );
-// }
 
-// export default Blouses;
+function Blouses() {
+
+    const [items, setItems] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch('https://61253db83c91fb0017e72a04.mockapi.io/items')
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                setItems(json);
+            });
+    }, []);
+
+    const onAddToCart = (obj) => {
+        console.log(obj);
+    }
+
+    return (
+        <div className="container">
+            <div className="cards">
+                {items.map((item) => (
+                    <Blouses3
+                        title={item.title}
+                        price={item.price}
+                        imageUrl={item.imageUrl}
+                        onPlus={(obj) => onAddToCart(obj)}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
+
+export default Blouses;

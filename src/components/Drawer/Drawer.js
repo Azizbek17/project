@@ -1,8 +1,15 @@
 import React from 'react';
 import './Drawer.css';
 
+
+
+
 function Drawer({ onClose, items = [] }) {
+
+
+
     return (
+
 
         <div className="overlay">
             <div className="drawer">
@@ -14,14 +21,18 @@ function Drawer({ onClose, items = [] }) {
 
                 <div className="items">
                     {items.map((obj) => (
-                    <div className="cartItem">
-                        <img style={{ backgroundImage: `url(${obj.imageUrl})` }} className="pic" src="./img/women/blouses/2.jpg" width="100"></img>
-                        <div>
-                            <p className="mb-5">{obj.title}</p>
-                            <b>{obj.price}</b>
+                        <div className="cartItem">
+                            {/* <img style={{ backgroundImage: `url(${obj.imageUrl})` }} className="pic" src="./img/women/blouses/2.jpg" width="100"></img> */}
+                            <div
+                                style={{ backgroundImage: `url(${obj.ImageUrl})` }}
+                                className="cartItemImg"></div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">{obj.title}</p>
+                                <b>{obj.price}</b>
+                            </div>
+                            <img className="removeBtn" src="./img/close.svg" alt="Remove" width="20" />
                         </div>
-                        <img className="removeBtn" src="./img/close.svg" alt="Remove" width="20" />
-                    </div>
                     ))}
                 </div>
 

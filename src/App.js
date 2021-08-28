@@ -14,18 +14,15 @@ import Footer from './components/Footer/Footer';
 import { HashRouter, Route, Switch, } from 'react-router-dom';
 
 
-
 function App() {
 
   const [cartOpened, setCartOpened] = React.useState(false);
   const [cartItems, setCartItems] = React.useState([]);
 
-
   return (
 
-    
     <>
-      {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} />}
+      {cartOpened && <Drawer items={ cartItems } onClose={() => setCartOpened(false)} />}
       <Header onClickCart={() => setCartOpened(true)} />
       <Nav />
       <HashRouter>

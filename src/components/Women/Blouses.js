@@ -3,46 +3,45 @@ import Blouses3 from './Blouses3';
 import './Blouses3.css';
 
 
-const items = [
+// const items = [
 
-    {
-        "title": "aaaaaa",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
-    {
-        "title": "bbbbb",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
-    {
-        "title": "ccccc",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
-    {
-        "title": "dddddd",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
-    {
-        "title": "eeeeee",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
-    {
-        "title": "fffffff",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
-    {
-        "title": "gggggg",
-        "price": 12312,
-        "imageUrl": "./img/women/blouses/2.jpg"
-    },
+//     {
+//         "title": "aaaaaa",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
+//     {
+//         "title": "bbbbb",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
+//     {
+//         "title": "ccccc",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
+//     {
+//         "title": "dddddd",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
+//     {
+//         "title": "eeeeee",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
+//     {
+//         "title": "fffffff",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
+//     {
+//         "title": "gggggg",
+//         "price": 12312,
+//         "imageUrl": "./img/women/blouses/2.jpg"
+//     },
 
-];
-
+// ];
 
 
 function Blouses() {
@@ -62,25 +61,30 @@ function Blouses() {
 
 
     const onAddToCart = (obj) => {
-        setCartItems([... cartItems, obj]);
+        setCartItems([...cartItems, obj]);
     };
 
     console.log(cartItems);
 
+
     return (
-        <div className="container">
-            <div className="cards">
-                {items.map((obj) => (
-                    <Blouses3
-                        title={obj.title}
-                        price={obj.price}
-                        imageUrl={obj.imageUrl}
-                        onPlus={(obj) => onAddToCart(obj)}
-                    />
-                ))}
+        <>
+
+            <div className="container">
+                <div className="cards">
+                    {items.map((item) => (
+                        <Blouses3
+                            title={item.title}
+                            price={item.price}
+                            imageUrl={item.imageUrl}
+                            onPlus={(obj) => onAddToCart(obj)}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
+
 
 export default Blouses;
